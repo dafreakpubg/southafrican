@@ -1,488 +1,506 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
-	 <meta name="google-site-verification" content="8FDZOMzbekZgAI4_0_u_TQcGsdmgWqxgcIwnVSAAQKg" />
-  <meta name="google-site-verification" content="FG584_J_yE2Xb5TZA_ongl5wW2mIUXFTrsE8gE0L43w" />
-  <meta name="google-site-verification" content="4tCwSvC0MuiNwJsJ6uDxdvpnQW9AREZDPW9G3JSvh3o" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mzansi Chronicles | South African Blog</title>
-	<meta name="description" content="South African tech news, startups, apps, AI, gadgets, telecoms, and digital trends. Clear updates, local insights and practical tech reporting for you.">
-  <meta name="keywords" content="south african news, south african blog, tech news, tech blog, ai news,ai blog">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link rel="stylesheet" href="style.css">
+    
+    <!-- SEO & AEO Meta Tags -->
+    <title>South Africa Digital Hub | Airports, Education & Tech Resources</title>
+    <meta name="description" content="Curated South African directory: Official airport info, NSFAS student aid, university guides, SASSA apps, and web design services.">
+    <meta name="keywords" content="south african airports, nsfas, cape town international airport, sassa srd status, website design durban, king shaka, or tambo">
+    <meta name="author" content="SA Digital Hub">
+    <link rel="canonical" href="https://yourdomain.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="South Africa Digital Resource Hub">
+    <meta property="og:description" content="Essential links for SA Travel, Education, Nature, and Technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.pexels.com/photos/2997895/pexels-photo-2997895.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+    <!-- Structured Data (JSON-LD) for AEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "South Africa Digital Hub",
+      "description": "A curated collection of essential South African websites and applications.",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Cape Town International Airport", "url": "http://capetowninternationalairport.co.za/"},
+          {"@type": "ListItem", "position": 2, "name": "King Shaka International Airport", "url": "http://kingshakainternationalairport.co.za/"},
+          {"@type": "ListItem", "position": 3, "name": "OR Tambo International Airport", "url": "https://ortambointernationalairport.co.za/"},
+          {"@type": "ListItem", "position": 4, "name": "NSFAS", "url": "http://nationalstudentfinancialaidscheme.co.za/"},
+          {"@type": "ListItem", "position": 5, "name": "Paradise Valley Pinetown", "url": "http://paradise-valley.co.za/"}
+        ]
+      }
+    }
+    </script>
+
     <style>
+        :root {
+            --primary: #007A5E;
+            --gold: #F7B731;
+            --dark: #121212;
+            --surface: #FFFFFF;
+            --bg: #F4F5F7;
+            --text: #2D3748;
+            --text-muted: #718096;
+            --radius: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+            background-color: #E2E8F0;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 100px 0; }
+
+        /* --- HEADER --- */
+        header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .nav-links a { margin-left: 32px; font-weight: 600; font-size: 0.95rem; color: var(--text-muted); }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- HERO --- */
+        .hero {
+            position: relative;
+            padding: 140px 0 120px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute; inset: 0; z-index: -1;
+            background: linear-gradient(135deg, #007A5E 0%, #004D3A 100%);
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* --- SECTION HEADERS --- */
+        .section-title { margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; letter-spacing: -0.5px; }
+        .section-title p { font-size: 1.125rem; color: var(--text-muted); max-width: 600px; }
+        .section-title .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        /* --- CARD GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-img {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-img img { transition: transform 0.6s ease; }
+        .card:hover .card-img img { transform: scale(1.05); }
+
+        .card-body { padding: 32px; flex: 1; display: flex; flex-direction: column; }
+        
+        .card-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: var(--dark); line-height: 1.3; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; flex: 1; }
+
+        .card-link {
+            font-weight: 700;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .card-link span { transition: transform 0.2s; }
+        .card:hover .card-link span { transform: translateX(4px); }
+
+        /* --- DARK TECH SECTION --- */
+        .tech-section { background: var(--dark); color: white; }
+        .tech-section .section-title h2 { color: white; }
+        .tech-section .section-title p { color: rgba(255,255,255,0.6); }
+        .tech-section .card { background: #1E1E1E; border-color: rgba(255,255,255,0.08); }
+        .tech-section .card h3 { color: white; }
+        .tech-section .card p { color: rgba(255,255,255,0.6); }
+        .tech-section .card-tag { color: var(--gold); }
+        .tech-section .card-link { color: var(--gold); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.5);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+        }
+        
+        .footer-nav { display: flex; justify-content: center; gap: 32px; margin-bottom: 32px; flex-wrap: wrap; }
+        .footer-nav a { color: rgba(255,255,255,0.7); font-weight: 600; }
+        .footer-nav a:hover { color: white; }
+        .disclaimer { font-size: 0.8rem; margin-top: 16px; opacity: 0.6; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            section { padding: 60px 0; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <i class="fas fa-globe-africa"></i>
-                <h1>Mzansi <span>Chronicles</span></h1>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#" class="filter-link active" data-filter="all">Home</a></li>
-                    <li><a href="#" class="filter-link" data-filter="politics">Politics</a></li>
-                    <li><a href="#" class="filter-link" data-filter="culture">Culture</a></li>
-                    <li><a href="#" class="filter-link" data-filter="travel">Travel</a></li>
-                    <li><a href="#" class="filter-link" data-filter="food">Food</a></li>
-                    <li><a href="#" class="filter-link" data-filter="history">History</a></li>
-                    <li><a href="guest-post.html">Guest Post / Add My Site</a></li>
-                </ul>
+        <div class="container">
+            <nav>
+                <div class="logo">SA<span style="color:var(--gold)">Hub</span>.</div>
+                <div class="nav-links">
+                    <a href="#airports">Airports</a>
+                    <a href="#education">Education</a>
+                    <a href="#lifestyle">Lifestyle</a>
+                    <a href="#apps">Apps</a>
+                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-bg"></div>
         <div class="container">
-            <h2>Discover the Rainbow Nation</h2>
-            <p>Exploring South Africa's vibrant culture, rich history, stunning landscapes, and dynamic society through stories and perspectives from across the country.</p>
-            <a href="#blogGrid" class="cta-button">Explore Our Stories</a>
+            <h1>Your Gateway to<br>South Africa</h1>
+            <p>A verified directory of essential digital resources. From international travel hubs and student finance to local nature reserves and utility apps.</p>
+        </div>
+    </div>
+
+    <!-- AIRPORTS -->
+    <section id="airports">
+        <div class="container">
+            <div class="section-title">
+                <span class="badge">Aviation & Travel</span>
+                <h2>National Airport Directory</h2>
+                <p>Official information portals for South Africa's primary international and regional airports.</p>
+            </div>
+            
+            <div class="grid">
+                <!-- Cape Town International -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://capetowninternationalairport.co.za/wp-content/uploads/2025/07/logo-1-e1784229438249.png" alt="Cape Town airport terminal with Table Mountain view" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Western Cape</span>
+                        <h3>Cape Town International Airport</h3>
+                        <p>The primary gateway to the Western Cape. Access real-time flight schedules, terminal maps, and tourism information for the Mother City.</p>
+                        <a href="http://capetowninternationalairport.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">cape town international airport<span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- King Shaka -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://kingshakainternationalairport.co.za/wp-content/uploads/2025/07/king-shaka-international-airport.png" alt="Modern airport arrivals hall interior representing King Shaka" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">KwaZulu-Natal</span>
+                        <h3>King Shaka International Airport</h3>
+                        <p>Serving Durban and the greater KZN region. Find parking rates, shuttle services, and passenger guidelines for domestic and international flights.</p>
+                        <a href="http://kingshakainternationalairport.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">king shaka international airport<span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- OR Tambo -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://ortambointernationalairport.co.za/wp-content/uploads/2025/11/or-tambo-airport-logo.jpg" alt="International airport departure board and terminal" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Gauteng</span>
+                        <h3>OR Tambo International Airport</h3>
+                        <p>Africa's busiest aviation hub. Essential guides for transit passengers, lounge access, inter-terminal transfers, and Gautrain connections.</p>
+                        <a href="https://ortambointernationalairport.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">ortambo international airport<span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Parking -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80" alt="Secure underground airport parking garage" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Travel Services</span>
+                        <h3>Airport Parking Solutions</h3>
+                        <p>Compare secure parking options, valet services, and long-term storage rates. Pre-book your spot to guarantee availability during peak seasons.</p>
+                        <a href="http://cape-townairport.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">Book cape town airport parking<span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- SA Airports -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://sa-airports.co.za/wp-content/uploads/2013/05/south_african_airports.jpg" alt="Air traffic control tower at South African airport" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">National Network</span>
+                        <h3>South African Airports Database</h3>
+                        <p>Comprehensive directory covering regional aerodromes, private airfields, and domestic terminals across all nine provinces.</p>
+                        <a href="http://sa-airports.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">south african airports<span>→</span></a>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- Main Content with Grid -->
-    <main class="container blog-grid-container" id="blogGrid">
-        <div class="grid-header">
-            <h2>Latest Stories</h2>
-            <div class="post-count">
-                Showing <span id="postCount">8</span> articles
+    <!-- EDUCATION -->
+    <section id="education" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <span class="badge">Education & Finance</span>
+                <h2>Student Resources</h2>
+                <p>Empowering learners with accessible tertiary information and government financial aid portals.</p>
             </div>
-        </div>
-        
-        <!-- Blog Posts Grid -->
-        <div class="blog-grid" id="blogPosts">
-            <!-- No Results Message -->
-            <div class="no-results" id="noResults">
-                <i class="fas fa-search"></i>
-                <h3>No articles found in this category</h3>
-                <p>Try selecting a different category or browse all articles.</p>
-                <button id="showAll" class="cta-button" style="margin-top: 20px;">Show All Articles</button>
-            </div>
-            
-            <!-- Featured Post -->
-            <article class="post-card featured-post" data-category="culture">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80');"></div>
-                <div class="post-content">
-                    <span class="post-category culture">Featured: Culture</span>
-                    <h2 class="post-title"><a href="post-culture-tradition.html">The Evolution of South African Traditions in Modern Society</a></h2>
-                    <p class="post-excerpt">How ancient customs and traditions are adapting to contemporary life while preserving their essence and significance in South African communities. This in-depth exploration looks at how traditional practices are being reinterpreted for the 21st century.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> June 15, 2023</span>
-                        <a href="post-culture-tradition.html" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Post 2 -->
-            <article class="post-card" data-category="travel">
-                <div class="post-image" style="background-image: url('https://img.freepik.com/free-photo/black-bird-flying-ocean-near-wooden-pathway-daytime_181624-7995.jpg?t=st=1767543501~exp=1767547101~hmac=ec0a690dce89f746b35130371acdfd981514fb3244e34409dcb9f5c8f3c4e6cd&w=740');"></div>
-                <div class="post-content">
-                    <span class="post-category travel">Travel</span>
-                    <h2 class="post-title"><a href="post-garden-route.html">Exploring the Garden Route: Hidden Gems</a></h2>
-                    <p class="post-excerpt">Discover lesser-known stops along South Africa's famous Garden Route that offer authentic experiences away from the crowded hotspots.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> June 10, 2023</span>
-                        <a href="post-garden-route.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Post 3 -->
-            <article class="post-card" data-category="food">
-                <div class="post-image" style="background-image: url('https://img.freepik.com/free-photo/people-enjoying-mexican-barbecue_23-2151000260.jpg?t=st=1767541120~exp=1767544720~hmac=f126a5970b8bb1c1b14942b0ea856305f6dd448986c7fc693b04fbfa2f9d724b&w=1060');"></div>
-                <div class="post-content">
-                    <span class="post-category food">Food</span>
-                    <h2 class="post-title"><a href="post-braai-culture.html">Beyond the Braai: South Africa's Diverse Culinary Landscape</a></h2>
-                    <p class="post-excerpt">From bunny chow to bobotie, explore the diverse flavors that make up South Africa's unique food culture beyond the beloved braai.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> June 5, 2023</span>
-                        <a href="post-braai-culture.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Post 4 -->
-            <article class="post-card" data-category="history">
-                <div class="post-image" style="background-image: url('https://img.freepik.com/premium-photo/midsection-woman-wearing-bead-bracelet_1048944-28318934.jpg?w=740');"></div>
-                <div class="post-content">
-                    <span class="post-category history">History</span>
-                    <h2 class="post-title"><a href="post-heritage-sites.html">Preserving Heritage: Protecting SA's Historical Sites</a></h2>
-                    <p class="post-excerpt">A look at the challenges and successes in preserving South Africa's diverse historical landmarks for future generations.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 28, 2023</span>
-                        <a href="post-heritage-sites.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Post 5 -->
-            <article class="post-card" data-category="politics">
-                <div class="post-image" style="background-image: url('https://img.freepik.com/premium-photo/high-angle-view-painting-table_1048944-7346194.jpg?w=740');"></div>
-                <div class="post-content">
-                    <span class="post-category politics">Politics</span>
-                    <h2 class="post-title"><a href="post-sa-democracy.html">30 Years of Democracy: SA's Political Evolution</a></h2>
-                    <p class="post-excerpt">Reflecting on three decades of democratic governance in South Africa, the challenges faced, and the road ahead.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 20, 2023</span>
-                        <a href="post-sa-democracy.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Post 6 -->
-            <article class="post-card" data-category="culture">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
-                <div class="post-content">
-                    <span class="post-category culture">Culture</span>
-                    <h2 class="post-title"><a href="post-music-scene.html">The Beat of the Nation: SA's Evolving Music Scene</a></h2>
-                    <p class="post-excerpt">From traditional maskandi to contemporary amapiano, explore how South African music shapes the nation's identity.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 15, 2023</span>
-                        <a href="post-music-scene.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Post 7 -->
-            <article class="post-card" data-category="travel">
-                <div class="post-image" style="background-image: url('https://img.freepik.com/free-photo/reflection-lionesses-drinking-water-from-small-pond_181624-32697.jpg?t=st=1767541639~exp=1767545239~hmac=e98b673d68a084ac753fc57cda6620b98cc61ddfdc0268e1f332a515ee3f028d&w=740');"></div>
-                <div class="post-content">
-                    <span class="post-category travel">Travel</span>
-                    <h2 class="post-title"><a href="post-kruger-wildlife.html">Wildlife Wonders: A Season in Kruger National Park</a></h2>
-                    <p class="post-excerpt">An insider's guide to experiencing South Africa's premier game reserve, from the Big Five to lesser-known wildlife.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 10, 2023</span>
-                        <a href="post-kruger-wildlife.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Post 8 -->
-            <article class="post-card" data-category="food">
-                <div class="post-image" style="background-image: url('https://img.freepik.com/free-photo/work-sommelier_1098-14997.jpg?t=st=1767541747~exp=1767545347~hmac=9ddc8edecb855b7ef530e45e6ebd0e0fd64c6cd7b3600dfc49ffb16cb7bc62f9&w=740');"></div>
-                <div class="post-content">
-                    <span class="post-category food">Food</span>
-                    <h2 class="post-title"><a href="post-wine-lands.html">Cape Winelands: The Renaissance of SA Wine</a></h2>
-                    <p class="post-excerpt">Discover how South African winemakers combine centuries-old techniques with modern innovation to create world-class wines.</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 5, 2023</span>
-                        <a href="post-wine-lands.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-			<!-- Post 9 -->
-            <article class="post-card" data-category="travel">
-                <div class="post-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c6/Arriv%C3%A9e_et_retour_-_WikiIndaba_2024_5.jpg');"></div>
-                <div class="post-content">
-                    <span class="post-category travel">Travel</span>
-                    <h2 class="post-title"><a href="OR-Tambo-International-Airport-JNB-Essential-Guide-to-Flights-Car-Rental-and-Accommodation.html">OR Tambo International Airport (JNB): Essential Guide to Flights, Car Rental, and Accommodation</a></h2>
-                    <p class="post-excerpt">Stepping off a plane at OR Tambo International Airport feels like entering the heart of South Africa. As Africa's</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> Dec 11, 2025</span>
-                        <a href="post-wine-lands.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-			<!-- Post 10 -->
-            <article class="post-card" data-category="motoring">
-                <div class="post-image" style="background-image: url('https://mybroadband.co.za/news/wp-content/uploads/2025/12/Plug-in-hybrids.jpg');"></div>
-                <div class="post-content">
-                    <span class="post-category motoring">Motoring</span>
-                    <h2 class="post-title"><a href="PHEV-Sales-South-Africa-Market-Boom-Price-Cuts.html">PHEV Sales South Africa: Market Boom & Price Cuts</a></h2>
-                    <p class="post-excerpt">South Africa's automotive landscape is undergoing a significant transformation. A remarkable trend has emerged in the pa...</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> Dec 21, 2025</span>
-                        <a href="post-wine-lands.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-			<!-- Post 11 -->
-            <article class="post-card" data-category="travel">
-                <div class="post-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f2/International_Departures%2C_Cape_Town_Airport.jpg');"></div>
-                <div class="post-content">
-                    <span class="post-category travel">Travel</span>
-                    <h2 class="post-title"><a href="Cape-Town-International-Airport.html">Cape Town International Airport (CPT): Essential Guide to Flights, Car Rental and Accommodation</a></h2>
-                    <p class="post-excerpt">Arriving at Cape Town International Airport feels like stepping into the gateway of the Mother City. As South Africa's</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> Dec 11, 2025</span>
-                        <a href="post-wine-lands.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-			<!-- Post 12 -->
-            <article class="post-card" data-category="culture">
-                <div class="post-image" style="background-image: url('https://media.citizen.co.za/wp-content/uploads/2025/12/junior-king-wide.jpg');"></div>
-                <div class="post-content">
-                    <span class="post-category cukture">Culture</span>
-                    <h2 class="post-title"><a href="Junior-King-TikTok-Star-Death-Shocks-SA.html">Junior King TikTok Star Death Shocks SA</a></h2>
-                    <p class="post-excerpt">South Africa awoke to devastating news on Thursday morning. The nation began to mourn the tragic Junior King TikTok star...</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> Dec 11, 2025</span>
-                        <a href="post-wine-lands.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-			<!-- Post 13 -->
-            <article class="post-card" data-category="travel">
-                <div class="post-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/63/KSIA-Departures.jpg');"></div>
-                <div class="post-content">
-                    <span class="post-category travel">Travel</span>
-                    <h2 class="post-title"><a href="King-Shaka-International-Airport-DUR.html">King Shaka International Airport (DUR): Essential Guide to Flights, Car Rental and Accommodation</a></h2>
-                    <p class="post-excerpt">Arriving at King Shaka International Airport feels like stepping into the gateway to KwaZulu-Natal's stunning beaches an...</p>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> Dec 11, 2025</span>
-                        <a href="post-wine-lands.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-			
-        </div>
-        
-        <!-- Newsletter Section 
-        <div class="newsletter-section">
-            <h2>Stay Connected with Mzansi Chronicles</h2>
-            <p>Subscribe to our newsletter for the latest stories, travel tips, and cultural insights from across South Africa.</p>
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>-->
-        
-        
-    </main>
 
-    <!-- Footer -->
+            <div class="grid">
+                <!-- University Info -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800" alt="South African university campus building facade" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Higher Learning</span>
+                        <h3>University Information Portal</h3>
+                        <p>Your comprehensive guide to SA tertiary institutions. Compare accredited courses, admission point scores (APS), and campus facilities nationwide.</p>
+                        <a href="http://universityinformation.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">south african university information<span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- NSFAS -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Students studying together representing NSFAS financial aid" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Government Bursary</span>
+                        <h3>National Student Financial Aid Scheme</h3>
+                        <p>The official resource for government bursaries. Check application statuses, verify eligibility criteria, and understand repayment obligations.</p>
+                        <a href="http://nationalstudentfinancialaidscheme.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">nsfas portal<span>→</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIFESTYLE & SERVICES -->
+    <section id="lifestyle">
+        <div class="container">
+            <div class="section-title">
+                <span class="badge">Nature & Professional</span>
+                <h2>Lifestyle & Business</h2>
+                <p>Discover local conservation areas and expert digital service providers.</p>
+            </div>
+
+            <div class="grid">
+                <!-- Paradise Valley -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lush green valley nature reserve landscape in KZN" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Nature Reserve</span>
+                        <h3>Paradise Valley Nature Reserve</h3>
+                        <p>A biodiversity gem in Pinetown offering indigenous forest trails, bird watching, and serene picnic spots along the Umbilo River.</p>
+                        <a href="http://paradise-valley.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">paradise valley pinetown<span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Web Design -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Web design workspace with code on monitor screen" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Digital Agency</span>
+                        <h3>Creative Web Solutions</h3>
+                        <p>Professional digital craftsmanship for businesses. Specializing in responsive development, SEO optimization, and brand identity in KZN.</p>
+                        <a href="http://webdesignconcepts.co.za/" class="card-link" target="_blank" rel="noopener noreferrer">website design durban<span>→</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH SHOWCASE (Dark) -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-title">
+                <span class="badge" style="color: var(--gold);">Featured Deployments</span>
+                <h2>High-Performance Platforms</h2>
+                <p>Optimized static sites and cloud-native architectures showcasing modern SA web infrastructure.</p>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Cloudflare Pages</span>
+                        <h3>SA Regional Hub</h3>
+                        <p>Edge-optimized deployment focusing on sub-second load times and accessibility for South African content consumers.</p>
+                        <a href="https://southafrican.pages.dev/" class="card-link" target="_blank" rel="noopener noreferrer">Visit Platform<span>→</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Netlify CDN</span>
+                        <h3>South African Network</h3>
+                        <p>Continuous deployment showcase featuring automated builds, serverless functions, and global asset distribution.</p>
+                        <a href="https://south-african.netlify.app/" class="card-link" target="_blank" rel="noopener noreferrer">Visit Platform<span>→</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Vercel Edge</span>
+                        <h3>SA Digital Edge</h3>
+                        <p>Next-generation frontend cloud platform delivering instant caching and framework-agnostic rendering capabilities.</p>
+                        <a href="https://southafrican.vercel.app/" class="card-link" target="_blank" rel="noopener noreferrer">Visit Platform<span>→</span></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">GitHub Pages</span>
+                        <h3>Open Source SA</h3>
+                        <p>Community-driven repository hosting collaborative projects, documentation, and static site generation workflows.</p>
+                        <a href="https://dafreakpubg.github.io/south-african" class="card-link" target="_blank" rel="noopener noreferrer">Visit Platform<span>→</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPS -->
+    <section id="apps">
+        <div class="container">
+            <div class="section-title">
+                <span class="badge">Mobile Utilities</span>
+                <h2>Essential Android Apps</h2>
+                <p>Verified applications for grant tracking, education reference, and device maintenance.</p>
+            </div>
+
+            <div class="grid">
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Government Service</span>
+                        <h3>Social Relief Grant Checker</h3>
+                        <p>Instantly verify your R350/R370 SRD grant status, appeal declines, and check payment dates without visiting Home Affairs.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.wdc.srd370statuscheck" class="card-link" target="_blank" rel="noopener noreferrer">sassa srd 350/370 status app<span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Education Reference</span>
+                        <h3>SA Universities Companion</h3>
+                        <p>Offline-capable mobile reference for prospective students. Includes course lists, APS calculators, and direct application links.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.wdc.sauniversities" class="card-link" target="_blank" rel="noopener noreferrer">sa universities app<span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Device Utility</span>
+                        <h3>Android Storage Cleaner</h3>
+                        <p>Reclaim phone storage safely. Identify duplicate files, clear cached data, and optimize memory usage without root access.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.wdc.cleanerc" class="card-link" target="_blank" rel="noopener noreferrer">android storage cleaner<span>→</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Mzansi Chronicles</h3>
-                    <p>Sharing the stories of South Africa - its people, culture, and landscapes. Join us as we explore the Rainbow Nation.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" class="filter-link" data-filter="politics">Politics</a></li>
-                        <li><a href="#" class="filter-link" data-filter="culture">Culture</a></li>
-                        <li><a href="#" class="filter-link" data-filter="travel">Travel</a></li>
-                        <li><a href="#" class="filter-link" data-filter="food">Food</a></li>
-                        <li><a href="#" class="filter-link" data-filter="history">History</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</li>
-                        <li><i class="fas fa-envelope"></i> info@mzansichronicles.com</li>
-                        <li><i class="fas fa-phone"></i> +27 11 123 4567</li>
-                    </ul>
-                </div>
+            <div class="footer-nav">
+                <a href="#airports">Airports</a>
+                <a href="#education">Education</a>
+                <a href="#lifestyle">Lifestyle</a>
+                <a href="#apps">Applications</a>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2026 Mzansi Chronicles. All rights reserved. | Proudly South African</p>
-            </div>
+            <p>&copy; 2026 South Africa Digital Hub. All rights reserved.</p>
+            <p class="disclaimer">
+                Disclaimer: This website is an independent directory resource. We are not directly affiliated with ACSA, NSFAS, SASSA, or any government department. 
+                All trademarks and logos belong to their respective owners. Information is provided for convenience only.
+            </p>
         </div>
     </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
 
-    const filterLinks = document.querySelectorAll('.filter-link');
-    const posts = document.querySelectorAll('.post-card');
-    const noResults = document.getElementById('noResults');
-    const postCount = document.getElementById('postCount');
-    const showAllBtn = document.getElementById('showAll');
-
-    function updateCount() {
-        const visible = document.querySelectorAll('.post-card:not(.hidden)').length;
-        postCount.textContent = visible;
-    }
-
-    function filter(category) {
-        let visible = 0;
-
-        posts.forEach(post => {
-            if (category === 'all' || post.dataset.category === category) {
-                post.classList.remove('hidden');
-                visible++;
-            } else {
-                post.classList.add('hidden');
-            }
-        });
-
-        noResults.classList.toggle('show', visible === 0);
-        updateCount();
-
-        filterLinks.forEach(link => {
-            link.classList.toggle('active', link.dataset.filter === category);
-        });
-    }
-
-    filterLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            filter(this.dataset.filter);
-        });
-    });
-
-    showAllBtn.addEventListener('click', function () {
-        filter('all');
-    });
-
-    filter('all');
-});
-</script>
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            const nav = document.getElementById('mainNav');
-            nav.classList.toggle('active');
-            
-            // Change icon
-            const icon = this.querySelector('i');
-            if (nav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Newsletter form submission
-        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input').value;
-            alert(`Thank you for subscribing with ${email}! You'll receive our next newsletter.`);
-            this.reset();
-        });
-        
-        // Blog post filtering functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterLinks = document.querySelectorAll('.filter-link');
-            const blogPosts = document.querySelectorAll('.post-card');
-            const noResults = document.getElementById('noResults');
-            const showAllBtn = document.getElementById('showAll');
-            const postCount = document.getElementById('postCount');
-            
-            // Function to update post count
-            function updatePostCount(category) {
-                if (category === 'all') {
-                    postCount.textContent = blogPosts.length;
-                } else {
-                    const filteredPosts = Array.from(blogPosts).filter(post => 
-                        post.getAttribute('data-category') === category && !post.classList.contains('hidden')
-                    );
-                    postCount.textContent = filteredPosts.length;
-                }
-            }
-            
-            // Function to filter posts
-            function filterPosts(category) {
-                let visiblePosts = 0;
-                
-                blogPosts.forEach(post => {
-                    if (category === 'all' || post.getAttribute('data-category') === category) {
-                        post.classList.remove('hidden');
-                        visiblePosts++;
-                    } else {
-                        post.classList.add('hidden');
-                    }
-                });
-                
-                // Show/hide no results message
-                if (visiblePosts === 0) {
-                    noResults.classList.add('show');
-                } else {
-                    noResults.classList.remove('show');
-                }
-                
-                // Update active state on filter links
-                filterLinks.forEach(link => {
-                    if (link.getAttribute('data-filter') === category) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-                
-                // Update post count
-                updatePostCount(category);
-                
-                // Scroll to blog section
-                document.getElementById('blogGrid').scrollIntoView({ behavior: 'smooth' });
-            }
-            
-            // Add click event to all filter links
-            filterLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const category = this.getAttribute('data-filter');
-                    filterPosts(category);
-                });
-            });
-            
-            // Show all posts button
-            showAllBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                filterPosts('all');
-            });
-            
-            // Footer category links
-            const footerCategoryLinks = document.querySelectorAll('.footer-links .filter-link');
-            footerCategoryLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const category = this.getAttribute('data-filter');
-                    filterPosts(category);
-                    
-                    // Also update the main nav
-                    filterLinks.forEach(navLink => {
-                        if (navLink.getAttribute('data-filter') === category) {
-                            navLink.classList.add('active');
-                        } else {
-                            navLink.classList.remove('active');
-                        }
-                    });
-                });
-            });
-            
-            // Initialize post count
-            updatePostCount('all');
-        });
-        
-        console.log("Blog frontend ready. Individual posts can be linked as separate HTML files.");
-    </script>
-	 <!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4998223,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4998223&101" alt="free web page hit counter" border="0"></a></noscript>
-<!-- Histats.com  END  -->
 </body>
 </html>
